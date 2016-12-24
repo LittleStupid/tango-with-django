@@ -7,7 +7,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.index, name='index')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#
+# if settings.DEBUG:
+#     urlpatterns += patterns(
+#         'django.views.static',
+#         (r'media/(?P<path>.*)',
+#          'serve',
+#          {'document_root': settings.MEDIA_ROOT}),)
 
 # if settings.DEBUG:
 #     urlpatterns += [
