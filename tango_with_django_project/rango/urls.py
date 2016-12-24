@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^add_category/$', views.add_category,
         name='add_category'),
+    url(r'^register/$', views.register, name='register'),
     url(r'^category/(?P<category_name_slug>[\w\-]+)/$',
         views.category, name='category')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
